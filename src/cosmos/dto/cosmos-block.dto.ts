@@ -1,5 +1,5 @@
 export class CosmosBlockDto {
-	height: number;
+	height: string;
 	time: Date;
 	hash: string;
 	proposedAddress: string;
