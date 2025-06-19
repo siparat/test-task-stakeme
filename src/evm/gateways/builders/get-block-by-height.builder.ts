@@ -3,7 +3,7 @@ import { randomUUID } from 'crypto';
 interface Body {
 	jsonrpc: '2.0';
 	method: 'eth_getBlockByNumber';
-	params: [string, false];
+	params: [height: string, false];
 	id: string;
 }
 

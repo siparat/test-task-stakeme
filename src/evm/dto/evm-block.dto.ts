@@ -5,17 +5,17 @@ export class EvmBlockDto {
 	height: number;
 
 	@Expose()
-	hash: number;
+	hash: string;
 
 	@Expose()
-	parentHash: number;
+	parentHash: string;
 
 	@Expose()
-	gasLimit: number;
+	gasLimit: string;
 
 	@Expose()
-	gasUsed: number;
+	gasUsed: string;
 
 	@Expose()
-	size: number;
+	size: string;
 }
