@@ -6,14 +6,14 @@ export interface N0okBlockResponseResult {
 			hash: string;
 		};
 	};
-	block: {
+	block?: {
 		header: {
 			version: {
 				block: string;
 				app: string;
 			};
 			chain_id: string;
-			height: string; // число в строке
+			height: string;
 			time: string;
 			last_block_id: {
 				hash: string;
@@ -55,7 +55,33 @@ export interface N0okBlockResponseResult {
 	};
 }
 
+export interface N0okTransactionResponseResult {
+	hash: string;
+	height: string;
+	index: number;
+	tx_result: {
+		data: string;
+		log: string;
+		gas_wanted: string;
+		gas_used: string;
+		evm_tx_info: {
+			senderAddress: string;
+			txHash: string;
+		};
+		events: {
+			type: 'tx' | 'message' | 'signer' | 'aggregate_vote';
+			attributes: {
+				key: string;
+				value: string | null;
+				index: boolean;
+			}[];
+		}[];
+	};
+	tx: string;
+}
+
 export interface N0okErrorResponse {
 	code: number;
 	message: string;
+	data: string;
 }
